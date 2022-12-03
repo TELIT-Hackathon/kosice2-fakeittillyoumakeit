@@ -22,8 +22,21 @@ public class RenterService implements IRenterService{
     }
 
 
-    public List<Renter> getRenters(ArrayList<Characteristics> characteristics) {
-        List<Integer> characteristic_id = new ArrayList<>();
+    public List<Renter> getRenters(List<Characteristics> characteristics) {
+        Set<Renter> result = new HashSet<>();
+
+        for (var characteristic:characteristics) {
+            var k =( entityManager.createQuery("SELECT r from Renter r JOIN renter_characteristic rc on" +
+                    " r.renter_id = rc.renter_id where rc.characteristic_id =: characteristic ")
+                    .setParameter("characteristic", characteristic)
+                    .getResultList());
+            for (var inK: k) {
+                result.add((Renter) inK);
+            }
+        }
+
+        return result.stream().toList();
+        /*List<Integer> characteristic_id = new ArrayList<>();
         for (int i=0; i<characteristics.size(); i++){
             characteristic_id.add(characteristics.get(i).getCharacteristics_Id());
         }
@@ -67,6 +80,8 @@ public class RenterService implements IRenterService{
         }
 
         return finish;
+        */
+
     }
 /*
     @PersistenceContext
