@@ -34,7 +34,17 @@ public class Characteristics {
         this.description = description;
     }
 
+    public int getCharacteristics_Id() {
+        return Characteristics_Id;
+    }
 
+    public List<Renter> getRenters() {
+        return renters;
+    }
+
+    public void setRenters(Renter renter) {
+        this.renters.add(renter);
+    }
 
     @ManyToMany(targetEntity = Renter.class, cascade = { CascadeType.ALL })
     @JoinTable(
