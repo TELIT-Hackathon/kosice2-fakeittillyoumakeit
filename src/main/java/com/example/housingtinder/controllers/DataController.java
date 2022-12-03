@@ -17,4 +17,13 @@ public class DataController {
         return "index";
     }
 
+    @GetMapping(value = "/hello")
+    public String hello(Model model) {
+
+        var msg = "Hello there!";
+        model.addAttribute("message", msg);
+
+        return "index";
+    }
+
 }

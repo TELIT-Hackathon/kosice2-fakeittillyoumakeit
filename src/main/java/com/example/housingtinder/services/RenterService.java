@@ -21,7 +21,7 @@ public class RenterService implements IRenterService{
         return entityManager.createQuery("select r from Renter r").getResultList();
     }
 
-
+    @Override
     public List<Renter> getRenters(List<Characteristics> characteristics) {
         Set<Renter> result = new HashSet<>();
 

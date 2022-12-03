@@ -1,7 +1,6 @@
 package com.example.housingtinder;
 
-import com.example.housingtinder.services.DataService;
-import com.example.housingtinder.services.RenterService;
+import com.example.housingtinder.services.*;
 import jakarta.persistence.Entity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -21,5 +20,10 @@ public class HousingTinderApplication {
 
     @Bean
     public DataService dataService(){return new DataService();}
-
+    @Bean
+    public IRenterService renterService(){ return new RenterService(); }
+    @Bean
+    public GroupService groupService(){ return new GroupService(); }
+    @Bean
+    public MatchService matchService(){ return new MatchService(); }
 }

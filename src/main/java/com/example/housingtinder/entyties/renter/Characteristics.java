@@ -11,6 +11,16 @@ import java.util.List;
 @Entity
 public class Characteristics {
 
+    public Characteristics(){
+
+    }
+
+    public Characteristics(int characteristics_Id, String name, String description) {
+        Characteristics_Id = characteristics_Id;
+        this.name = name;
+        this.description = description;
+    }
+
     @Id
     @GeneratedValue
     private int Characteristics_Id;

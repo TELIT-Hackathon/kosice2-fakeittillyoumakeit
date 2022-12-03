@@ -15,7 +15,6 @@ public class Renter {
     @Id
     @GeneratedValue
     private int renter_id;
-
     private String photo;
     private String description;
     private String name;
@@ -28,8 +27,6 @@ public class Renter {
 
     @ManyToMany(mappedBy = "renters")
     private List<Characteristics> characteristics = new ArrayList<>();
-
-
 
     @OneToMany(mappedBy = "Id")
     private List<Match> matches_id;
