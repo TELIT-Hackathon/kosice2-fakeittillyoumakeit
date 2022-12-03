@@ -1,9 +1,9 @@
 package com.example.housingtinder.entyties.renter;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
+
+import jakarta.persistence.*;
 import jakarta.persistence.Id;
-import jdk.jfr.Enabled;
+
 
 @Entity
 public class Characteristics {
@@ -30,4 +30,10 @@ public class Characteristics {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @ManyToOne
+    @JoinColumn(name="renter_id")
+    private Renter renter;
+
+
 }

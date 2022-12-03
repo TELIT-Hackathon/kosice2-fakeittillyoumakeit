@@ -10,11 +10,11 @@ public class Match {
     private int Id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "renter_id")
+    @JoinColumn(name = "first_id")
     private Renter first_id;
 
     @ManyToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "renter_id")
+    @JoinColumn(name = "second_id")
     private Renter second_id;
 
     public Match() {
