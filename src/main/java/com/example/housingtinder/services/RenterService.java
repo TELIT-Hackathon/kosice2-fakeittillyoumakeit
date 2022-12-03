@@ -1,13 +1,18 @@
 package com.example.housingtinder.services;
 
 import com.example.housingtinder.entyties.renter.Renter;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.PersistenceContext;
+
 
 import java.util.List;
 
 public class RenterService implements IRenterService{
 
+
+    @Override
+    public List<Renter> getRenters() {
+        return null;
+    }
+/*
     @PersistenceContext
     EntityManager entityManager;
 
@@ -17,5 +22,5 @@ public class RenterService implements IRenterService{
 
     public List<Renter> getRenters(){
         return entityManager.createQuery("select r from Renter r").getResultList();
-    }
+    }*/
 }

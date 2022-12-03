@@ -14,7 +14,7 @@ public class Renter {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int renter_id;
 
     private String photo;
     private String description;

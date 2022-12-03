@@ -6,12 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Gr
-        p {
+public class Grp {
 
     @Id
     @GeneratedValue
-    private int id;
+    private int group_id;
 
 
     @ManyToMany(targetEntity = Renter.class, cascade = { CascadeType.ALL })
