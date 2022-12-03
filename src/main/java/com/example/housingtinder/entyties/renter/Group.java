@@ -1,10 +1,8 @@
 package com.example.housingtinder.entyties.renter;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -14,7 +12,13 @@ public class Group {
     @GeneratedValue
     private int id;
 
-    @OneToMany(mappedBy = "Id")
-    private List<Renter> renter_id;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "renter_group",
+            joinColumns = {@JoinColumn(name = "group_id")},
+            inverseJoinColumns = {@JoinColumn(name = "renter_id")}
+    )
+    private List<Renter> renters = new ArrayList<>();
 
 }

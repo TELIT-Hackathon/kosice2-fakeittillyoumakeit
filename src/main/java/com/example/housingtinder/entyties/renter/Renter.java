@@ -2,6 +2,7 @@ package com.example.housingtinder.entyties.renter;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -25,6 +26,9 @@ public class Renter {
 
     @OneToMany(mappedBy = "Id")
     private List<Match> matches_id;
+
+    @ManyToMany(mappedBy = "renters")
+    private List<Group> groups = new ArrayList<>();
 
     public String getPhoto() {
         return photo;
