@@ -7,7 +7,9 @@ import jakarta.persistence.PersistenceContext;
 
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class RenterService implements IRenterService{
 
@@ -25,7 +27,46 @@ public class RenterService implements IRenterService{
         for (int i=0; i<characteristics.size(); i++){
             characteristic_id.add(characteristics.get(i).getCharacteristics_Id());
         }
-        return entityManager.createQuery("select r from Renter r").getResultList();
+
+        List<Integer> people_id = new ArrayList<>();
+
+        for(int i=0; i<characteristic_id.size(); i++){
+            var people = entityManager.createQuery("select r.renter_id from renter_characteristic r where r.characteristic_id =: characteristic")
+                    .setParameter("characteristic",characteristic_id.get(i)).getResultList();
+            for(int j=0; j<people.size(); j++) {
+                people_id.add((Integer) people.get(j));
+            }
+        }
+
+        Set<Integer> dontRepeat = new HashSet<>();
+        for (int i=0; i< people_id.size(); i++){
+            dontRepeat.add(people_id.get(i));
+        }
+
+        var k = dontRepeat.toArray();
+
+        List<Integer> result = new ArrayList<>();
+        for (int i=0; i<k.length; i++){
+            int counter =0;
+            for (int j=0; j< people_id.size(); j++){
+                if(people_id.get(j) == k[i]){
+                    counter++;
+                }
+            }
+            if (counter>=characteristics.size()/2){
+                result.add((Integer) k[i]);
+            }
+        }
+
+        List<Renter> finish= new ArrayList<>();
+
+        for (int i=0; i< result.size(); i++){
+            finish.add((Renter) entityManager.createQuery("select r from Renter r where r.renter_id =: renter_id")
+                            .setParameter("renter_id", result.get(i))
+                    .getResultList().get(0));
+        }
+
+        return finish;
     }
 /*
     @PersistenceContext
