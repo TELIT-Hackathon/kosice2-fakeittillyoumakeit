@@ -1,0 +1,13 @@
+City:   Kosice
+
+Адреси:
+Street:  Kysucká 14F
+Street:  K Surdoku 7142/25C
+Street:  Námestie mieru 5042/1
+Street:  Gúgska 670/12
+Street:  Sídlisko Rozvoj 1115
+Street:  Mládežnícka 1892/5
+Street:  Jesenského 85/61
+Street:  Črmeľská cesta 1
+Street:  Perečínska 4510
+Street:  Znievska 16
