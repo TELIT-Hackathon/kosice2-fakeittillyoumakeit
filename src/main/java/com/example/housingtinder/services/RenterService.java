@@ -6,7 +6,7 @@ import jakarta.persistence.PersistenceContext;
 
 import java.util.List;
 
-public class RenterService {
+public class RenterService implements IRenterService{
 
     @PersistenceContext
     EntityManager entityManager;
