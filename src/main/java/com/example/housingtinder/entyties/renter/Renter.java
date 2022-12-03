@@ -21,10 +21,10 @@ public class Renter {
     private String name;
     private String email;
 
-
+/*
     @OneToMany(mappedBy = "Characteristics_Id")
     private List<Characteristics> characteristic_id;
-
+*/
 
     @ManyToMany(mappedBy = "renters")
     private List<Characteristics> characteristics = new ArrayList<>();
