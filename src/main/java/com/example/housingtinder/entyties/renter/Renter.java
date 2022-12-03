@@ -20,8 +20,16 @@ public class Renter {
     private String description;
     private String name;
     private String email;
-    @OneToMany(mappedBy = "Id")
+
+
+    @OneToMany(mappedBy = "Characteristics_Id")
     private List<Characteristics> characteristic_id;
+
+
+    @ManyToMany(mappedBy = "renters")
+    private List<Characteristics> characteristics = new ArrayList<>();
+
+
 
     @OneToMany(mappedBy = "Id")
     private List<Match> matches_id;
