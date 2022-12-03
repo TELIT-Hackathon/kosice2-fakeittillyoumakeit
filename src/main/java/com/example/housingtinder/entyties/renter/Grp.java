@@ -6,8 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Gr
-        p {
+public class Grp {
 
     @Id
     @GeneratedValue
