@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 public class Renter {
@@ -15,7 +14,7 @@ public class Renter {
 
     @Id
     @GeneratedValue
-    private int Id;
+    private int id;
 
     private String photo;
     private String description;
@@ -28,7 +27,7 @@ public class Renter {
     private List<Match> matches_id;
 
     @ManyToMany(mappedBy = "renters")
-    private List<Group> groups = new ArrayList<>();
+    private List<Grp> groups = new ArrayList<>();
 
     public String getPhoto() {
         return photo;

@@ -9,12 +9,12 @@ public class Match {
     @GeneratedValue
     private int Id;
 
-    @ManyToOne
-    @JoinColumn(name = "Id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "renter_id")
     private Renter first_id;
 
-    @ManyToOne
-    @JoinColumn(name = "Id")
+    @ManyToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "renter_id")
     private Renter second_id;
 
     public Match() {

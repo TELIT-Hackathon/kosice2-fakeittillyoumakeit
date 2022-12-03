@@ -6,14 +6,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Group {
+public class Gr
+        p {
 
     @Id
     @GeneratedValue
     private int id;
 
 
-    @ManyToMany(cascade = { CascadeType.ALL })
+    @ManyToMany(targetEntity = Renter.class, cascade = { CascadeType.ALL })
     @JoinTable(
             name = "renter_group",
             joinColumns = {@JoinColumn(name = "group_id")},
