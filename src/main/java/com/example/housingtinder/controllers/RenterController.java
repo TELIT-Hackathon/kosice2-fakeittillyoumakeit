@@ -43,7 +43,7 @@ public class RenterController {
         var chr = new Characteristics(0, "student", "student");
         ArrayList<Characteristics> characteristics = new ArrayList<>();
         characteristics.add(chr);
-        var users = renterService.getRenters(characteristics);
+        var users = renterService.getRenters();
 
         model.addAttribute("name", users.get(0).getName());
         model.addAttribute("desc", users.get(0).getDescription());
