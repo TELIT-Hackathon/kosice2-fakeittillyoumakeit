@@ -18,7 +18,7 @@ public class RenterService implements IRenterService{
 
     @Override
     public List<Renter> getRenters() {
-        return entityManager.createQuery("select r from Renter r").getResultList();
+        return entityManager.createQuery("select r from Renter r order by r.renter_id").getResultList();
     }
 
     @Override

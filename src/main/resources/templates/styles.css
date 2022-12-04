@@ -1,19 +1,23 @@
-html{
+html {
     background: #cccccc;
+    -webkit-tap-highlight-color: transparent;
 }
-body{
+
+body {
     margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
 }
 
 
-header{
+header {
     background-color: white;
     box-shadow: 0 1px 11px 0 black;
 }
 
-header img{
-    width: 16vw;
-    padding: 2% 2% 2% 5%;
+header img {
+    width: 18vw;
+    padding: 2% 2% 2% 4%;
 }
 
 header h1 {
@@ -22,49 +26,111 @@ header h1 {
     font-style: normal;
     position: absolute;
     left: 24vw;
-    top: 7vw;
+    top: 6vw;
     color: #34E2D8;
     text-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
 }
 
-.accomm_filters{
+.accomm_filters {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     font-size: 4vw;
 }
 
-.accomm_filters div{
+.accomm_filters div {
 
 }
 
 /*Accommodation block*/
-#accommodation-variants div{
+#accommodation-variants div {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 4%;
+    margin: 5%;
+    border-radius: 22px;
+    box-shadow: 2px 2px 5px black;
 }
 
-#accommodation-variants div img{
-    width:20vw;
-    padding:2vw;
+#accommodation-variants div img {
+    width: 35vw;
 }
 
 #accommodation-variants {
-    font-size:3vw;
-    font-weight:bold;
+    font-size: 3vw;
 }
 
-.variant-details{
-    font-weight:bold;
+#accommodation-variants p {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
 }
+
+#accommodation-variants h2 {
+    font-size: 4vw;
+}
+
+/*Chat block*/
+form input{
+    width: 83%;
+    margin: 4%;
+    padding: 4%;
+    border-radius: 50px;
+}
+form button img{
+    position: absolute;
+    right: 10vw;
+    top: 27vw;
+    width: 7vw;
+}
+
+.chat-person{
+    background-color: white;
+    width: 83%;
+    margin: 4%;
+    padding: 4%;
+    border-radius: 22px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 2px 2px 5px black;
+}
+
+.chat-person img{
+    width: 18vw;
+    border-radius: 50%;
+}
+
+.chat-person img{
+    width: 18vw;
+    border-radius: 50%;
+}
+
+.chat-person aside p span{
+    font-size: 4vw;
+}
+
+.chat-person aside p{
+    font-size: 3vw;
+}
+
+.date-speak{
+    font-size: 2.4vw;
+}
+
+.date-speak img {
+    width: 4vw;
+    border-radius: 0;
+    padding: 2vw 0 0 11vw;
+}
+
 
 /*Swipe block*/
-.background-person{
+.background-person {
     height: 35vh;
     margin: 10%;
-    border-radius: 13%;
+    border-radius: 22px;
 }
 
 .person-information {
@@ -72,28 +138,44 @@ header h1 {
     margin: 10%;
     position: relative;
     top: -11vh;
-    border-radius: 13%;
+    border-radius: 22px;
     background: white;
     height: 38vh;
-    box-shadow: 0px 4px 4px 2px rgb(0 0 0 / 25%);
+    box-shadow: 0 4px 4px 2px rgb(0 0 0 / 25%);
 }
 
-.person-information h3{
-    padding:7%;
+.person-information h3 {
+    padding: 7%;
     font-size: 6vw;
 }
 
-.person-information p{
+.person-information p {
     font-size: 4.5vw;
     padding: 0 7vw 0 7vw;
 }
 
+
+/*footer*/
 footer {
-    font-size:3vw;
+    font-size: 3vw;
     position: absolute;
     bottom: 0;
     display: flex;
     flex-direction: row;
-    width: 100%;
-    justify-content: space-around;
+    width: 88%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0 4% 0 4%;
+    border-radius: 60px 60px 0 0;
+    box-shadow: 0px -2px 6px 0px black;
+    margin: 0 2% 0 2%;
+}
+
+footer a img {
+    width: 13vw;
+}
+
+.swipes img {
+    width: 20vw;
 }

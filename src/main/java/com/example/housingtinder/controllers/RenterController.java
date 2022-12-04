@@ -1,6 +1,7 @@
 package com.example.housingtinder.controllers;
 
 import com.example.housingtinder.entyties.renter.Characteristics;
+import com.example.housingtinder.entyties.renter.Match;
 import com.example.housingtinder.entyties.renter.Renter;
 import com.example.housingtinder.entyties.renter.User;
 import com.example.housingtinder.services.IRenterService;
@@ -24,6 +25,8 @@ public class RenterController {
     @Autowired
     private IRenterService renterService;
 
+    List<Renter> renters = null;
+    List<Match> matches = null;
     @RequestMapping
     public String index(Model model){
         return "index1.mustache";
@@ -55,15 +58,46 @@ public class RenterController {
     @GetMapping(value = "/user")
     public String getUser1(Model model){
 
+        if(renters == null){
+            renters = renterService.getRenters();
+        }
+        var renter = renters.get(0);
+        var renter2 = renters.get(0);
         //public User(String name, int age, String gender, int adult_count, int child_count, String description, String image)
-        User users = new User("Vasyl", 20, "M", 1, 0, "sfsdfsdf", "https://media-exp1.licdn.com/dms/image/D4E03AQEBwFIP28Fqpg/profile-displayphoto-shrink_800_800/0/1667580459361?e=2147483647&v=beta&t=EbCzZL0Mnn39XqD8YGC0xEqJsCbcK138iQRtIgloXMI");
-
+        User users = new User(renter.getName(), renter.getAge(), "M", renter.getAdultCount(), renter.getChildCount(), renter.getDescription(), renter.getPhoto());
+//        Renter user = renterService.getRenters().get(id);
+        User users1 = new User(renter2.getName(), renter2.getAge(), "M", renter2.getAdultCount(), renter2.getChildCount(), renter2.getDescription(), renter2.getPhoto());
         model.addAttribute("users", users);
-
+        model.addAttribute("users1", users1);
 
         return "index";
     }
 
+    @GetMapping(value = "/SwipeToLeft")
+    public String swipeToLeft(){
 
+        if(renters != null) {
+            renters.add(renters.get(0));
+            renters.remove(renters.get(0));
+        }
+        return "redirect:/user";
+    }
 
+    @GetMapping(value = "/SwipeToRight")
+    public String swipeToRight(){
+        if(renters.get(0).getId() == 100){
+            if(renters != null){
+                renters.add(renters.get(0));
+                renters.remove(renters.get(0));
+            }
+            return "redirect:/chat";
+        } else {
+            return "redirect:/SwipeToLeft";
+        }
+    }
+
+//    @GetMapping(value = "/chat")
+//    public String chat(){
+//
+//    }
 }

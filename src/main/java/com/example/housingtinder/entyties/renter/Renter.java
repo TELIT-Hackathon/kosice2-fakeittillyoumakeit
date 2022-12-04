@@ -28,6 +28,10 @@ public class Renter {
     private List<Characteristics> characteristic_id;
 */
 
+    public int getId(){
+        return renter_id;
+    }
+
     public int getAge() {
         return age;
     }
