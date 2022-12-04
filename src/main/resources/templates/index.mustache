@@ -6,10 +6,9 @@
 </head>
 <body>
 
-    <h1>{{ name }}</h1> <br>
-    {{ desc }}<br>
-    <img src="/people_images/Daria_Olivna.jpeg" alt="NOT FOUND"> <br>
-    {{photo}}
+    {{#users}}
+        <h1>{{name}} - {{email}}</h1>
+    {{/users}}
 
 </body>
 </html>

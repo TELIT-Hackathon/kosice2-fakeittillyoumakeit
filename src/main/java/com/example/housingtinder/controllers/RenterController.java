@@ -1,12 +1,12 @@
 package com.example.housingtinder.controllers;
 
-import org.springframework.ui.Model;
 import com.example.housingtinder.entyties.renter.Characteristics;
 import com.example.housingtinder.entyties.renter.Renter;
 import com.example.housingtinder.services.IRenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.WebApplicationContext;
@@ -45,10 +45,7 @@ public class RenterController {
         characteristics.add(chr);
         var users = renterService.getRenters();
 
-        model.addAttribute("name", users.get(0).getName());
-        model.addAttribute("desc", users.get(0).getDescription());
-        model.addAttribute("photo", users.get(0).getPhoto());
-        model.addAttribute("email", users.get(0).getEmail());
+        model.addAttribute("users", users);
 
 
         return "index";
