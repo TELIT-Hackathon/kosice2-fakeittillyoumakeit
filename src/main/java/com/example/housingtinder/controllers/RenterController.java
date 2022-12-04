@@ -26,7 +26,7 @@ public class RenterController {
 
     @RequestMapping
     public String index(Model model){
-        return "index.mustache";
+        return "index1.mustache";
     }
 
     @RequestMapping("/showRenters")
@@ -49,14 +49,14 @@ public class RenterController {
         model.addAttribute("users", users);
 
 
-        return "index";
+        return "index1";
     }
 
     @GetMapping(value = "/user")
     public String getUser1(Model model){
 
         //public User(String name, int age, String gender, int adult_count, int child_count, String description, String image)
-        User users = new User("Vasyl", 20, "M", 1, 0, "sfsdfsdf", "sdfsdfsdf");
+        User users = new User("Vasyl", 20, "M", 1, 0, "sfsdfsdf", "https://media-exp1.licdn.com/dms/image/D4E03AQEBwFIP28Fqpg/profile-displayphoto-shrink_800_800/0/1667580459361?e=2147483647&v=beta&t=EbCzZL0Mnn39XqD8YGC0xEqJsCbcK138iQRtIgloXMI");
 
         model.addAttribute("users", users);
 

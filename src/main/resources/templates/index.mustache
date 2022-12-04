@@ -1,14 +1,90 @@
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"/>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello</title>
+    <title>Sharent</title>
+    <link rel="stylesheet" href="http://localhost:63342/kosice2-fakeittillyoumakeit/templates/styles.css">
 </head>
 <body>
+<header>
+    <img alt="logo" src="">
+    <h1>Sharent</h1>
+</header>
 
+<script id="Accommodation" type="text/template">
+    <!--filters for accommodations-->
+    <aside class="accomm_filters">
+        <div>
+            <p>Price</p>
+        </div>
+        <div>
+            <p>Area</p>
+        </div>
+        <div>
+            <p>Capacity</p>
+        </div>
+    </aside>
+    <article id="accommodation-variants">
+        <!--variant block-->
+        <div>
+            <aside>
+                <img src="https://github.com/TELIT-Hackathon/kosice2-fakeittillyoumakeit/blob/main/image_apart/1/1-result.jpg?raw=true"
+                     alt="image"/>
+            </aside>
+            <p>
+                <span>Price:</span> 400€
+                <span>Square:</span> 54m <br>
+                <span>Capacity:</span> 4 people <br>
+            </p>
+        </div>
+    </article>
+</script>
+
+<script id="Chat" type="text/template">
+    <p>Here is Chat</p>
+    <br>
+</script>
+
+<script id="Swipes" type="text/template">
     {{#users}}
-        <h1>{{name}}</h1>
-    {{/users}}
+    <aside style="background-image: url(&quot;{{image}}&quot;);"
+           class="background-person"></aside>
+    <div class="person-information">
+        <h3>{{name}}, {{age}}</h3> <br>
+        <p>
+            Gender: {{gender}}<br>
+            Family: {{adult_count}} adult, {{child_count}} children
+        </p>
+        <p>
+            {{description}}
+        </p>
+        <br>
 
+    </div>
+    {{/users}}
+</script>
+
+<script id="Voting" type="text/template">
+</script>
+
+<script id="Profile" type="text/template">
+    <p>Here is Profile</p>
+    <br>
+</script>
+
+<main id="routerView"></main>
+
+<footer>
+    <a href="#Accommodation">
+
+    </a>
+    <a href="#Chat">Chat</a>
+    <a href="#Swipes">Swipes</a>
+    <a href="#Voting">Voting</a>
+    <a href="#Profile">Profile</a>
+</footer>
+
+<script type="module" src="http://localhost:63342/kosice2-fakeittillyoumakeit/templates/index.js?_ijt=lq1blrkb9i97gpjne2vnnl28q8"></script>
 </body>
 </html>
