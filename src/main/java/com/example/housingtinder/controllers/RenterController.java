@@ -2,6 +2,7 @@ package com.example.housingtinder.controllers;
 
 import com.example.housingtinder.entyties.renter.Characteristics;
 import com.example.housingtinder.entyties.renter.Renter;
+import com.example.housingtinder.entyties.renter.User;
 import com.example.housingtinder.services.IRenterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -50,5 +51,19 @@ public class RenterController {
 
         return "index";
     }
+
+    @GetMapping(value = "/user")
+    public String getUser1(Model model){
+
+        //public User(String name, int age, String gender, int adult_count, int child_count, String description, String image)
+        User users = new User("Vasyl", 20, "M", 1, 0, "sfsdfsdf", "sdfsdfsdf");
+
+        model.addAttribute("users", users);
+
+
+        return "index";
+    }
+
+
 
 }

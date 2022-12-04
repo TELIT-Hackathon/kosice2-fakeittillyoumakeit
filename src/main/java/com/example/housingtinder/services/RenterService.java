@@ -28,7 +28,7 @@ public class RenterService implements IRenterService{
         for (var characteristic:characteristics) {
             var k =( entityManager.createQuery("SELECT r from Renter r JOIN renter_characteristic rc on" +
                     " r.renter_id = rc.renter_id where rc.characteristic_id =: characteristic ")
-                    .setParameter("characteristic", characteristic)
+                    .setParameter("characteristic", 1)
                     .getResultList());
             for (var inK: k) {
                 result.add((Renter) inK);

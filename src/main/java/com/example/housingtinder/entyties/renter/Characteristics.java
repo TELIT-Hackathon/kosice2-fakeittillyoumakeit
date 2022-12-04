@@ -21,6 +21,11 @@ public class Characteristics {
         this.description = description;
     }
 
+    public Characteristics( String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
     @Id
     @GeneratedValue
     private int Characteristics_Id;
